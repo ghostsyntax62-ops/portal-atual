@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal Atual | Informação que conecta você ao mundo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* CABEÇALHO */
+
+        header {
+            background: #0a2540;
+            color: white;
+            padding: 24px 6%;
+        }
+
+        .topo {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .slogan {
+            margin-top: 4px;
+            color: #d8e3ed;
+            font-size: 14px;
+        }
+
+        nav {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #00A8FF;
+        }
+
+        /* BARRA DE PESQUISA */
+
+.botao-tema {
+    margin-top: 20px;
+    background: #00A8FF;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-tema:hover {
+    background: #008bd1;
+}
+
+        .pesquisa {
+            margin-top: 25px;
+            display: flex;
+            max-width: 550px;
+        }
+
+        .pesquisa input {
+            flex: 1;
+            padding: 13px 15px;
+            border: none;
+            border-radius: 6px 0 0 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .pesquisa button {
+            background: #00A8FF;
+            color: white;
+            border: none;
+            padding: 13px 20px;
+            border-radius: 0 6px 6px 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pesquisa button:hover {
+            background: #008bd1;
+        }
+
+        /* DESTAQUE */
+
+        .barra-destaque {
+            background: white;
+            border-top: 4px solid #00A8FF;
+            border-bottom: 1px solid #ddd;
+            padding: 12px 6%;
+        }
+
+        .barra-conteudo {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .barra-destaque span {
+            background: #00A8FF;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        .barra-destaque p {
+            font-size: 14px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* CONTEÚDO */
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 30px;
+        }
+
+        .destaque {
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .categoria {
+            color: #0077cc;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .destaque h1 {
+            color: #0a2540;
+            font-size: 48px;
+            line-height: 1.12;
+            margin-bottom: 18px;
+        }
+
+        .subtitulo {
+            max-width: 800px;
+            color: #555;
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+
+        .destaque-info {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #0077cc;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: #005fa3;
+            transform: translateY(-2px);
+        }
+
+        .destaque img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: block;
+        }
+
+        /* NOTÍCIAS */
+
+        .noticias {
+            margin-top: 45px;
+        }
+
+        .noticias h2 {
+            color: #0a2540;
+            font-size: 28px;
+            border-left: 5px solid #00A8FF;
+            padding-left: 12px;
+            margin-bottom: 22px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #00A8FF;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-conteudo {
+            padding: 22px;
+        }
+
+        .card span {
+            color: #0077cc;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            line-height: 1.3;
+            margin: 10px 0;
+            color: #222;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .sem-resultado {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background: #0a2540;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-top: 4px solid #00A8FF;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #d8e3ed;
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+.modo-escuro {
+    background: #121212;
+    color: #eeeeee;
+}
+
+.modo-escuro .destaque,
+.modo-escuro .card,
+.modo-escuro .sem-resultado {
+    background: #1e1e1e;
+    color: #eeeeee;
+}
+
+.modo-escuro .destaque h1,
+.modo-escuro .noticias h2,
+.modo-escuro .card h3 {
+    color: white;
+}
+
+.modo-escuro .subtitulo,
+.modo-escuro .card p {
+    color: #cccccc;
+}
+
+.modo-escuro .barra-destaque {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+.modo-escuro .barra-destaque p {
+    color: #eeeeee;
+}
+
+        /* CELULAR */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 22px 20px;
+            }
+
+            .logo {
+                font-size: 27px;
+            }
+
+            .slogan {
+                font-size: 13px;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            nav a {
+                display: block;
+                padding: 4px 0;
+            }
+
+            .pesquisa {
+                width: 100%;
+            }
+
+            .pesquisa input {
+                min-width: 0;
+            }
+
+            .barra-destaque {
+                padding: 12px 20px;
+            }
+
+            .barra-conteudo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .barra-destaque p {
+                font-size: 13px;
+            }
+
+            main {
+                padding: 25px 15px;
+            }
+
+            .destaque {
+                padding: 25px 20px;
+            }
+
+            .destaque h1 {
+                font-size: 32px;
+            }
+
+            .subtitulo {
+                font-size: 17px;
+            }
+
+            .destaque img {
+                height: 240px;
+                margin-top: 25px;
+            }
+
+            .noticias {
+                margin-top: 30px;
+            }
+
+            .noticias h2 {
+                font-size: 24px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card img {
+                height: 210px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="topo">
+
+            <div class="logo">
+                PORTAL ATUAL
+            </div>
+
+            <div class="slogan">
+                Informação que conecta você ao mundo.
+            </div>
+
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="reportagem.html">Educação</a>
+                <a href="#tecnologia">Tecnologia</a>
+                <a href="#sociedade">Sociedade</a>
+                <a href="#meio-ambiente">Meio Ambiente</a>
+            </nav>
+
+            <!-- PESQUISA -->
+
+            <div class="pesquisa">
+
+                <button class="botao-tema" onclick="alternarTema()">
+    🌙 Modo escuro
+</button>
+
+                <input
+                    type="text"
+                    id="campoPesquisa"
+                    placeholder="Pesquisar notícias..."
+                >
+
+                <button onclick="pesquisarNoticias()">
+                    🔎 Pesquisar
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="barra-destaque">
+
+        <div class="barra-conteudo">
+
+            <span>DESTAQUE</span>
+
+            <p>
+                Entenda as mudanças nos hábitos de leitura dos jovens
+            </p>
+
+        </div>
+
+    </div>
+
+    <main>
+
+        <section class="destaque">
+
+            <div class="categoria">
+                EDUCAÇÃO
+            </div>
+
+            <h1>
+                Por que os jovens estão lendo menos?
+            </h1>
+
+            <p class="subtitulo">
+                Entenda os principais fatores que estão mudando os hábitos de leitura entre os jovens.
+            </p>
+
+            <p class="destaque-info">
+                Reportagem especial • 21 de setembro de 2026
+            </p>
+
+            <a href="reportagem.html" class="botao">
+                LER REPORTAGEM
+            </a>
+
+            <img
+                src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+                alt="Biblioteca com livros"
+            >
+
+        </section>
+
+        <section class="noticias">
+
+            <h2>
+                Últimas Notícias
+            </h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
+                        alt="Floresta e natureza"
+                    >
+
+                    <div class="card-conteudo">
+
+                        <span id="meio-ambiente">
+                            MEIO AMBIENTE
+                        </span>
+
+                        <h3>
+                            Como pequenas atitudes podem ajudar a preservar o meio ambiente
+                        </h3>
+
+                        <p>
+                            Reciclagem, economia de água e redução do desperdício são atitudes que podem fazer parte da rotina.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    <div class="card-conteudo">
+
+                        <span>
+                            EDUCAÇÃO
+                        </span>
+
+                        <h3>
+                            Como a tecnologia está mudando a forma de estudar
+                        </h3>
+
+                        <p>
+                            Ferramentas digitais já fazem parte da rotina de muitos estudantes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                        alt="Jovem utilizando um computador"
+                    >
+
+                    <div class="card-conteudo">
+
+                        <span id="tecnologia">
+                            TECNOLOGIA
+                        </span>
+
+                        <h3>
+                            O impacto das redes sociais na rotina dos jovens
+                        </h3>
+
+                        <p>
+                            O uso constante das plataformas digitais transforma hábitos e comportamentos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac"
+                        alt="Jovens reunidos conversando"
+                    >
+
+                    <div class="card-conteudo">
+
+                        <span id="sociedade">
+                            SOCIEDADE
+                        </span>
+
+                        <h3>
+                            Novos hábitos estão transformando o dia a dia
+                        </h3>
+
+                        <p>
+                            As mudanças na rotina influenciam a maneira como as pessoas consomem informação.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="sem-resultado" id="semResultado">
+                Nenhuma notícia encontrada.
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-logo">
+            PORTAL ATUAL
+        </div>
+
+        <p>
+            Informação que conecta você ao mundo.
+        </p>
+
+        <p>
+            © 2026 Portal Atual — Trabalho escolar.
+        </p>
+
+    </footer>
+
+    <script>
+
+function alternarTema() {
+
+    document.body.classList.toggle("modo-escuro");
+
+    const botao = document.querySelector(".botao-tema");
+
+    if (document.body.classList.contains("modo-escuro")) {
+        botao.innerHTML = "☀️ Modo claro";
+    } else {
+        botao.innerHTML = "🌙 Modo escuro";
+    }
+
+}
+
+        function pesquisarNoticias() {
+
+            const pesquisa = document
+                .getElementById("campoPesquisa")
+                .value
+                .toLowerCase()
+                .trim();
+
+            const cards = document.querySelectorAll(".card");
+
+            let encontrados = 0;
+
+            cards.forEach(function(card) {
+
+                const texto = card.innerText.toLowerCase();
+
+                if (texto.includes(pesquisa)) {
+
+                    card.style.display = "";
+
+                    encontrados++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+            const semResultado =
+                document.getElementById("semResultado");
+
+            if (encontrados === 0) {
+
+                semResultado.style.display = "block";
+
+            } else {
+
+                semResultado.style.display = "none";
+
+            }
+
+        }
+
+        document
+            .getElementById("campoPesquisa")
+            .addEventListener("keyup", function(event) {
+
+                if (event.key === "Enter") {
+                    pesquisarNoticias();
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Por que os jovens estão lendo menos? | Portal Atual</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f8;
+        color: #222;
+        line-height: 1.7;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+        background: #0a2540;
+        color: white;
+        padding: 24px 6%;
+    }
+
+    .topo {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .logo {
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 25px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    nav a:hover {
+        color: #00A8FF;
+    }
+
+    /* REPORTAGEM */
+
+    main {
+        max-width: 900px;
+        margin: 45px auto;
+        padding: 0 25px;
+    }
+
+    .categoria {
+        color: #0077cc;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    h1 {
+        color: #0a2540;
+        font-size: 46px;
+        line-height: 1.15;
+        margin: 10px 0 12px;
+    }
+
+    .data {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .linha-fina {
+        color: #555;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .imagem-principal {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .info {
+        color: #777;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+
+    article {
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    article p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    article h2 {
+        color: #0a2540;
+        font-size: 27px;
+        margin: 35px 0 15px;
+        border-left: 4px solid #00A8FF;
+        padding-left: 10px;
+    }
+
+    .chamada {
+        font-size: 20px !important;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .caixa-destaque {
+        background: #f2f7fb;
+        border-left: 5px solid #00A8FF;
+        padding: 18px;
+        margin: 25px 0;
+        font-size: 17px;
+    }
+
+    /* LEIA TAMBÉM */
+
+    .leia-tambem {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 20px 0 35px;
+    }
+
+    .leia-tambem a {
+        background: #f4f6f8;
+        border: 1px solid #ddd;
+        border-left: 4px solid #00A8FF;
+        padding: 18px;
+        border-radius: 6px;
+        color: #222;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    .leia-tambem a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .leia-tambem strong {
+        display: block;
+        color: #0a2540;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .leia-tambem span {
+        color: #666;
+        font-size: 14px;
+    }
+
+    /* FONTES */
+
+    .lista-fontes {
+        margin-top: 15px;
+        padding-left: 25px;
+    }
+
+    .lista-fontes li {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .lista-fontes a {
+        color: #0077cc;
+        text-decoration: none;
+    }
+
+    .lista-fontes a:hover {
+        text-decoration: underline;
+    }
+
+    /* VOLTAR */
+
+    .voltar {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+
+    .voltar a {
+        color: #0077cc;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .voltar a:hover {
+        text-decoration: underline;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        background: #0a2540;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 60px;
+        border-top: 4px solid #00A8FF;
+    }
+
+    .footer-logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    footer p {
+        color: #d8e3ed;
+        margin: 6px 0;
+        font-size: 14px;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 768px) {
+
+        header {
+            padding: 22px 20px;
+        }
+
+        .logo {
+            font-size: 27px;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            display: block;
+            padding: 4px 0;
+        }
+
+        main {
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .linha-fina {
+            font-size: 17px;
+        }
+
+        .imagem-principal {
+            height: 250px;
+        }
+
+        article {
+            padding: 25px 20px;
+        }
+
+        article p {
+            font-size: 17px;
+        }
+
+        article h2 {
+            font-size: 24px;
+        }
+
+        .leia-tambem {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+
+    <div class="topo">
+
+        <div class="logo">
+            PORTAL ATUAL
+        </div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="reportagem.html">Educação</a>
+            <a href="index.html#tecnologia">Tecnologia</a>
+            <a href="index.html#sociedade">Sociedade</a>
+            <a href="index.html#meio-ambiente">Meio Ambiente</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<main>
+
+    <div class="categoria">
+        EDUCAÇÃO
+    </div>
+
+    <h1>
+        Por que os jovens estão lendo menos?
+    </h1>
+
+    <p class="data">
+        21 de setembro de 2026
+    </p>
+
+    <p class="linha-fina">
+        Mudanças nos hábitos, crescimento das redes sociais e falta de tempo
+        estão entre os fatores que podem influenciar a relação dos jovens com a leitura.
+    </p>
+
+    <img
+        class="imagem-principal"
+        src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+        alt="Biblioteca com livros"
+    >
+
+    <p class="info">
+        Por Portal Atual • 19 de setembro de 2026
+    </p>
+
+    <article>
+
+        <div class="voltar">
+            <a href="index.html">
+                ← Voltar para a página inicial
+            </a>
+        </div>
+
+        <p class="chamada">
+            Redes sociais, celulares e novas formas de entretenimento estão mudando a relação dos jovens com os livros.
+        </p>
+
+        <p>
+            Nos últimos anos, o hábito de leitura entre os jovens vem passando por mudanças. Com o crescimento das redes sociais, dos vídeos curtos e do uso constante do celular, encontrar tempo para ler livros se tornou um desafio para muitos adolescentes.
+        </p>
+
+        <p>
+            Mas será que os jovens realmente estão lendo menos? E quais fatores estão por trás dessa mudança? Para entender esse cenário, é preciso observar como a tecnologia, a escola e os novos hábitos de consumo de informação estão transformando a relação dos adolescentes com a leitura.
+        </p>
+
+        <div class="caixa-destaque">
+            A forma de consumir conteúdo mudou: hoje, os jovens têm acesso a textos em livros, celulares, redes sociais, sites e plataformas digitais.
+        </div>
+
+        <h2>
+            O impacto das redes sociais
+        </h2>
+
+        <p>
+            As redes sociais mudaram a forma como os jovens consomem informação. Em poucos segundos, é possível assistir a vídeos, ler notícias e acompanhar diferentes conteúdos. Com tantas opções disponíveis, os livros acabam disputando espaço com outras formas de entretenimento.
+        </p>
+
+        <h2>
+            O papel da escola
+        </h2>
+
+        <p>
+            A escola também tem um papel importante na formação do hábito de leitura. Para muitos estudantes, os livros aparecem principalmente como uma obrigação para provas e trabalhos. Quando a leitura é apresentada apenas dessa forma, ela pode deixar de ser vista como uma atividade prazerosa e passar a ser associada somente às tarefas escolares.
+        </p>
+
+        <p>
+            Por outro lado, professores que permitem que os alunos conheçam diferentes gêneros e escolham algumas obras podem ajudar a aproximar os jovens dos livros. A variedade de interesses também é importante para tornar a leitura mais atrativa.
+        </p>
+
+        <h2>
+            O celular mudou a forma de ler?
+        </h2>
+
+        <p>
+            O celular também transformou a maneira como os jovens entram em contato com textos. Notícias, histórias, posts e livros digitais podem ser acessados pela tela, tornando a leitura mais rápida e prática. Ao mesmo tempo, as notificações e a grande quantidade de conteúdos disponíveis podem dificultar a concentração em textos mais longos.
+        </p>
+
+        <p>
+            Isso não significa que a tecnologia seja necessariamente inimiga da leitura. Aplicativos, bibliotecas digitais e livros eletrônicos também podem incentivar o contato com a literatura e facilitar o acesso às obras.
+        </p>
+
+        <h2>
+            O que os dados mostram?
+        </h2>
+
+        <p>
+            Pesquisas sobre hábitos de leitura ajudam a entender melhor essa mudança. Os dados mostram que o contato dos jovens com os livros não depende apenas da vontade de ler, mas também do acesso às obras, do ambiente familiar, da escola e do tempo disponível no dia a dia.
+        </p>
+
+        <p>
+            Além disso, a leitura não acontece somente em livros impressos. Muitos jovens também leem textos na internet, histórias digitais, notícias, quadrinhos e outros conteúdos. Por isso, analisar os hábitos de leitura exige considerar também essas novas formas de consumir textos.
+        </p>
+
+        <h2>
+            Uma nova relação com a leitura
+        </h2>
+
+        <p>
+            Os jovens não deixaram necessariamente de ler, mas a forma de leitura está mudando. O celular, as redes sociais e as novas tecnologias passaram a fazer parte da rotina e disputam a atenção com os livros.
+        </p>
+
+        <p>
+            Mais do que obrigar os jovens a ler, o desafio é criar oportunidades para que eles encontrem textos e histórias que despertem seu interesse. A escola, a família e as próprias tecnologias podem contribuir para tornar a leitura mais presente no cotidiano.
+        </p>
+
+        <p>
+            No fim, ler continua sendo uma importante forma de aprender, imaginar e conhecer diferentes realidades. O que mudou foi a maneira como os jovens encontram, escolhem e consomem esses conteúdos.
+        </p>
+
+        <h2>
+            Leia também
+        </h2>
+
+        <div class="leia-tambem">
+
+            <a href="index.html">
+                <strong>
+                    Portal Atual
+                </strong>
+
+                <span>
+                    Confira outras notícias e reportagens do portal.
+                </span>
+            </a>
+
+            <a href="index.html">
+                <strong>
+                    Educação
+                </strong>
+
+                <span>
+                    Veja outros conteúdos sobre educação e estudantes.
+                </span>
+            </a>
+
+        </div>
+
+        <h2>
+            Fontes e referências
+        </h2>
+
+        <p>
+            As informações desta reportagem foram baseadas em pesquisas e materiais sobre hábitos de leitura, educação, tecnologia e comportamento dos jovens.
+        </p>
+
+        <ul class="lista-fontes">
+
+            <li>
+                <a
+                    href="https://www.prolivro.org.br/pesquisas-retratos-da-leitura/as-pesquisas/"
+                    target="_blank"
+                >
+                    Instituto Pró-Livro — Retratos da Leitura no Brasil
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/22321-alfabetizacao.html"
+                    target="_blank"
+                >
+                    IBGE — Instituto Brasileiro de Geografia e Estatística
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.unesco.org/en/days/literacy"
+                    target="_blank"
+                >
+                    UNESCO — Alfabetização e leitura
+                </a>
+            </li>
+
+        </ul>
+
+    </article>
+
+</main>
+
+<footer>
+
+    <div class="footer-logo">
+        PORTAL ATUAL
+    </div>
+
+    <p>
+        Informação que conecta você ao mundo.
+    </p>
+
+    <p>
+        © 2026 Portal Atual — Trabalho escolar.
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>
